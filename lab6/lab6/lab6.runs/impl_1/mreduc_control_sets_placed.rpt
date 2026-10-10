@@ -1,0 +1,329 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
+| Date         : Thu Oct  8 10:46:05 2026
+| Host         : demopc0 running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file mreduc_control_sets_placed.rpt
+| Design       : mreduc
+| Device       : xc7a100t
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |   251 |
+|    Minimum number of control sets                        |   211 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |    40 |
+| Unused register locations in slices containing registers |  1005 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |   251 |
+| >= 0 to < 4        |    11 |
+| >= 4 to < 6        |     2 |
+| >= 6 to < 8        |     0 |
+| >= 8 to < 10       |     0 |
+| >= 10 to < 12      |     1 |
+| >= 12 to < 14      |     3 |
+| >= 14 to < 16      |     0 |
+| >= 16              |   234 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |             238 |          111 |
+| No           | No                    | Yes                    |             408 |          158 |
+| No           | Yes                   | No                     |               0 |            0 |
+| Yes          | No                    | No                     |             152 |           40 |
+| Yes          | No                    | Yes                    |           10213 |         2606 |
+| Yes          | Yes                   | No                     |               0 |            0 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++----------------+-----------------------------------------------+------------------------+------------------+----------------+--------------+
+|  Clock Signal  |                 Enable Signal                 |    Set/Reset Signal    | Slice Load Count | Bel Load Count | Bels / Slice |
++----------------+-----------------------------------------------+------------------------+------------------+----------------+--------------+
+|  clk_IBUF_BUFG | ch_valid_in[7]_i_1_n_0                        |                        |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG | ch_valid_in[6]_i_1_n_0                        |                        |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG | ch_valid_in[4]_i_1_n_0                        |                        |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG | ch_valid_in[3]_i_1_n_0                        |                        |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG | ch_valid_in[2]_i_1_n_0                        |                        |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG | cfg_regs_reg_n_0_[0][0]_repN_7                | channel[7].u_dsp/rst_n |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG | cfg_regs_reg_n_0_[0][0]_repN_4                | channel[7].u_dsp/rst_n |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG | cfg_regs_reg_n_0_[0][5]_repN_7                | channel[7].u_dsp/rst_n |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG | cfg_regs_reg_n_0_[0][4]_repN_7                | channel[7].u_dsp/rst_n |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG | cfg_regs_reg_n_0_[0][0]_repN_8                | channel[7].u_dsp/rst_n |                1 |              2 |         2.00 |
+|  clk_IBUF_BUFG | cfg_regs_reg_n_0_[0][2]                       | channel[7].u_dsp/rst_n |                1 |              2 |         2.00 |
+|  clk_IBUF_BUFG | cfg_regs_reg_n_0_[0][7]_repN_8                | channel[7].u_dsp/rst_n |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG | cfg_regs_reg_n_0_[0][2]_repN_8                | channel[7].u_dsp/rst_n |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG | cfg_regs_reg_n_0_[0][2]_repN_9                | channel[7].u_dsp/rst_n |                3 |             10 |         3.33 |
+|  clk_IBUF_BUFG | cfg_regs_reg_n_0_[0][5]_repN_9                | channel[7].u_dsp/rst_n |                3 |             12 |         4.00 |
+|  clk_IBUF_BUFG | cfg_regs_reg_n_0_[0][0]_repN_5                | channel[7].u_dsp/rst_n |                2 |             12 |         6.00 |
+|  clk_IBUF_BUFG | cfg_regs_reg_n_0_[0][7]_repN                  | channel[7].u_dsp/rst_n |                4 |             13 |         3.25 |
+|  clk_IBUF_BUFG | channel[4].u_dsp/coeffs[11][17]_i_1__3_n_0    | channel[7].u_dsp/rst_n |                3 |             18 |         6.00 |
+|  clk_IBUF_BUFG | channel[4].u_dsp/coeffs[6][17]_i_1__3_n_0     | channel[7].u_dsp/rst_n |                3 |             18 |         6.00 |
+|  clk_IBUF_BUFG | channel[4].u_dsp/coeffs[5][17]_i_1__3_n_0     | channel[7].u_dsp/rst_n |                3 |             18 |         6.00 |
+|  clk_IBUF_BUFG | channel[4].u_dsp/coeffs[12][17]_i_1__3_n_0    | channel[7].u_dsp/rst_n |                4 |             18 |         4.50 |
+|  clk_IBUF_BUFG | channel[4].u_dsp/coeffs[8][17]_i_1__3_n_0     | channel[7].u_dsp/rst_n |                5 |             18 |         3.60 |
+|  clk_IBUF_BUFG | channel[4].u_dsp/coeffs[2][17]_i_1__3_n_0     | channel[7].u_dsp/rst_n |                3 |             18 |         6.00 |
+|  clk_IBUF_BUFG | channel[4].u_dsp/coeffs[0][17]_i_1__3_n_0     | channel[7].u_dsp/rst_n |                3 |             18 |         6.00 |
+|  clk_IBUF_BUFG | channel[4].u_dsp/coeffs[4][17]_i_1__3_n_0     | channel[7].u_dsp/rst_n |                3 |             18 |         6.00 |
+|  clk_IBUF_BUFG | channel[3].u_dsp/coeffs[1][17]_i_1__2_n_0     | channel[7].u_dsp/rst_n |                4 |             18 |         4.50 |
+|  clk_IBUF_BUFG | channel[3].u_dsp/coeffs[12][17]_i_1__2_n_0    | channel[7].u_dsp/rst_n |                4 |             18 |         4.50 |
+|  clk_IBUF_BUFG | channel[3].u_dsp/coeffs[2][17]_i_1__2_n_0     | channel[7].u_dsp/rst_n |                4 |             18 |         4.50 |
+|  clk_IBUF_BUFG | channel[3].u_dsp/coeffs[3][17]_i_1__2_n_0     | channel[7].u_dsp/rst_n |                4 |             18 |         4.50 |
+|  clk_IBUF_BUFG | channel[3].u_dsp/coeffs[10][17]_i_1__2_n_0    | channel[7].u_dsp/rst_n |                3 |             18 |         6.00 |
+|  clk_IBUF_BUFG | channel[3].u_dsp/coeffs[11][17]_i_1__2_n_0    | channel[7].u_dsp/rst_n |                3 |             18 |         6.00 |
+|  clk_IBUF_BUFG | channel[3].u_dsp/coeffs[13][17]_i_1__2_n_0    | channel[7].u_dsp/rst_n |                4 |             18 |         4.50 |
+|  clk_IBUF_BUFG | channel[3].u_dsp/coeffs[14][17]_i_1__2_n_0    | channel[7].u_dsp/rst_n |                4 |             18 |         4.50 |
+|  clk_IBUF_BUFG | channel[3].u_dsp/coeffs[0][17]_i_1__2_n_0     | channel[7].u_dsp/rst_n |                5 |             18 |         3.60 |
+|  clk_IBUF_BUFG | channel[3].u_dsp/coeffs[8][17]_i_1__2_n_0     | channel[7].u_dsp/rst_n |                4 |             18 |         4.50 |
+|  clk_IBUF_BUFG | channel[3].u_dsp/coeffs[7][17]_i_1__2_n_0     | channel[7].u_dsp/rst_n |                4 |             18 |         4.50 |
+|  clk_IBUF_BUFG | channel[3].u_dsp/coeffs[9][17]_i_1__2_n_0     | channel[7].u_dsp/rst_n |                3 |             18 |         6.00 |
+|  clk_IBUF_BUFG | channel[1].u_dsp/coeffs[11][17]_i_1__0_n_0    | channel[7].u_dsp/rst_n |                3 |             18 |         6.00 |
+|  clk_IBUF_BUFG | channel[3].u_dsp/coeffs[6][17]_i_1__2_n_0     | channel[7].u_dsp/rst_n |                4 |             18 |         4.50 |
+|  clk_IBUF_BUFG | channel[3].u_dsp/coeffs[4][17]_i_1__2_n_0     | channel[7].u_dsp/rst_n |                5 |             18 |         3.60 |
+|  clk_IBUF_BUFG | channel[3].u_dsp/coeffs[0]                    | channel[7].u_dsp/rst_n |                3 |             18 |         6.00 |
+|  clk_IBUF_BUFG | channel[2].u_dsp/coeffs[0][17]_i_1__1_n_0     | channel[7].u_dsp/rst_n |                4 |             18 |         4.50 |
+|  clk_IBUF_BUFG | channel[2].u_dsp/coeffs[14][17]_i_1__1_n_0    | channel[7].u_dsp/rst_n |                3 |             18 |         6.00 |
+|  clk_IBUF_BUFG | channel[2].u_dsp/coeffs[3][17]_i_1__1_n_0     | channel[7].u_dsp/rst_n |                5 |             18 |         3.60 |
+|  clk_IBUF_BUFG | channel[2].u_dsp/coeffs[1][17]_i_1__1_n_0     | channel[7].u_dsp/rst_n |                4 |             18 |         4.50 |
+|  clk_IBUF_BUFG | channel[2].u_dsp/coeffs[4][17]_i_1__1_n_0     | channel[7].u_dsp/rst_n |                4 |             18 |         4.50 |
+|  clk_IBUF_BUFG | channel[2].u_dsp/coeffs[7][17]_i_1__1_n_0     | channel[7].u_dsp/rst_n |                5 |             18 |         3.60 |
+|  clk_IBUF_BUFG | channel[2].u_dsp/coeffs[9][17]_i_1__1_n_0     | channel[7].u_dsp/rst_n |                4 |             18 |         4.50 |
+|  clk_IBUF_BUFG | channel[2].u_dsp/coeffs[10][17]_i_1__1_n_0    | channel[7].u_dsp/rst_n |                5 |             18 |         3.60 |
+|  clk_IBUF_BUFG | channel[2].u_dsp/coeffs[8][17]_i_1__1_n_0     | channel[7].u_dsp/rst_n |                5 |             18 |         3.60 |
+|  clk_IBUF_BUFG | channel[2].u_dsp/coeffs[11][17]_i_1__1_n_0    | channel[7].u_dsp/rst_n |                4 |             18 |         4.50 |
+|  clk_IBUF_BUFG | channel[2].u_dsp/coeffs[2][17]_i_1__1_n_0     | channel[7].u_dsp/rst_n |                3 |             18 |         6.00 |
+|  clk_IBUF_BUFG | channel[2].u_dsp/coeffs[6][17]_i_1__1_n_0     | channel[7].u_dsp/rst_n |                5 |             18 |         3.60 |
+|  clk_IBUF_BUFG | channel[2].u_dsp/coeffs[12][17]_i_1__1_n_0    | channel[7].u_dsp/rst_n |                5 |             18 |         3.60 |
+|  clk_IBUF_BUFG | channel[2].u_dsp/coeffs[13][17]_i_1__1_n_0    | channel[7].u_dsp/rst_n |                3 |             18 |         6.00 |
+|  clk_IBUF_BUFG | channel[2].u_dsp/coeffs[5][17]_i_1__1_n_0     | channel[7].u_dsp/rst_n |                4 |             18 |         4.50 |
+|  clk_IBUF_BUFG | channel[2].u_dsp/coeffs[0]                    | channel[7].u_dsp/rst_n |                3 |             18 |         6.00 |
+|  clk_IBUF_BUFG | channel[1].u_dsp/coeffs[1][17]_i_1__0_n_0     | channel[7].u_dsp/rst_n |                4 |             18 |         4.50 |
+|  clk_IBUF_BUFG | channel[1].u_dsp/coeffs[2][17]_i_1__0_n_0     | channel[7].u_dsp/rst_n |                3 |             18 |         6.00 |
+|  clk_IBUF_BUFG | channel[1].u_dsp/coeffs[5][17]_i_1__0_n_0     | channel[7].u_dsp/rst_n |                4 |             18 |         4.50 |
+|  clk_IBUF_BUFG | channel[1].u_dsp/coeffs[6][17]_i_1__0_n_0     | channel[7].u_dsp/rst_n |                5 |             18 |         3.60 |
+|  clk_IBUF_BUFG | channel[1].u_dsp/coeffs[7][17]_i_1__0_n_0     | channel[7].u_dsp/rst_n |                4 |             18 |         4.50 |
+|  clk_IBUF_BUFG | channel[1].u_dsp/coeffs[8][17]_i_1__0_n_0     | channel[7].u_dsp/rst_n |                5 |             18 |         3.60 |
+|  clk_IBUF_BUFG | channel[1].u_dsp/coeffs[10][17]_i_1__0_n_0    | channel[7].u_dsp/rst_n |                4 |             18 |         4.50 |
+|  clk_IBUF_BUFG | channel[1].u_dsp/coeffs[12][17]_i_1__0_n_0    | channel[7].u_dsp/rst_n |                3 |             18 |         6.00 |
+|  clk_IBUF_BUFG | channel[1].u_dsp/coeffs[9][17]_i_1__0_n_0     | channel[7].u_dsp/rst_n |                3 |             18 |         6.00 |
+|  clk_IBUF_BUFG | channel[1].u_dsp/coeffs[0][17]_i_1__0_n_0     | channel[7].u_dsp/rst_n |                3 |             18 |         6.00 |
+|  clk_IBUF_BUFG | channel[1].u_dsp/coeffs[13][17]_i_1__0_n_0    | channel[7].u_dsp/rst_n |                3 |             18 |         6.00 |
+|  clk_IBUF_BUFG | channel[1].u_dsp/coeffs[14][17]_i_1__0_n_0    | channel[7].u_dsp/rst_n |                3 |             18 |         6.00 |
+|  clk_IBUF_BUFG | channel[1].u_dsp/coeffs[3][17]_i_1__0_n_0     | channel[7].u_dsp/rst_n |                4 |             18 |         4.50 |
+|  clk_IBUF_BUFG | channel[1].u_dsp/coeffs[4][17]_i_1__0_n_0     | channel[7].u_dsp/rst_n |                3 |             18 |         6.00 |
+|  clk_IBUF_BUFG | channel[1].u_dsp/coeffs[0]                    | channel[7].u_dsp/rst_n |                3 |             18 |         6.00 |
+|  clk_IBUF_BUFG | channel[4].u_dsp/coeffs[0]                    | channel[7].u_dsp/rst_n |                5 |             18 |         3.60 |
+|  clk_IBUF_BUFG | channel[5].u_dsp/coeffs[10][17]_i_1__4_n_0    | channel[7].u_dsp/rst_n |                5 |             18 |         3.60 |
+|  clk_IBUF_BUFG | channel[5].u_dsp/coeffs[1][17]_i_1__4_n_0     | channel[7].u_dsp/rst_n |                3 |             18 |         6.00 |
+|  clk_IBUF_BUFG | channel[5].u_dsp/coeffs[2][17]_i_1__4_n_0     | channel[7].u_dsp/rst_n |                3 |             18 |         6.00 |
+|  clk_IBUF_BUFG | channel[5].u_dsp/coeffs[5][17]_i_1__4_n_0     | channel[7].u_dsp/rst_n |                4 |             18 |         4.50 |
+|  clk_IBUF_BUFG | channel[5].u_dsp/coeffs[6][17]_i_1__4_n_0     | channel[7].u_dsp/rst_n |                3 |             18 |         6.00 |
+|  clk_IBUF_BUFG | channel[5].u_dsp/coeffs[8][17]_i_1__4_n_0     | channel[7].u_dsp/rst_n |                4 |             18 |         4.50 |
+|  clk_IBUF_BUFG | channel[5].u_dsp/coeffs[12][17]_i_1__4_n_0    | channel[7].u_dsp/rst_n |                4 |             18 |         4.50 |
+|  clk_IBUF_BUFG | channel[5].u_dsp/coeffs[13][17]_i_1__4_n_0    | channel[7].u_dsp/rst_n |                4 |             18 |         4.50 |
+|  clk_IBUF_BUFG | channel[5].u_dsp/coeffs[4][17]_i_1__4_n_0     | channel[7].u_dsp/rst_n |                6 |             18 |         3.00 |
+|  clk_IBUF_BUFG | channel[5].u_dsp/coeffs[9][17]_i_1__4_n_0     | channel[7].u_dsp/rst_n |                5 |             18 |         3.60 |
+|  clk_IBUF_BUFG | channel[5].u_dsp/coeffs[0][17]_i_1__4_n_0     | channel[7].u_dsp/rst_n |                3 |             18 |         6.00 |
+|  clk_IBUF_BUFG | channel[5].u_dsp/coeffs[11][17]_i_1__4_n_0    | channel[7].u_dsp/rst_n |                5 |             18 |         3.60 |
+|  clk_IBUF_BUFG | channel[5].u_dsp/coeffs[14][17]_i_1__4_n_0    | channel[7].u_dsp/rst_n |                4 |             18 |         4.50 |
+|  clk_IBUF_BUFG | channel[5].u_dsp/coeffs[7][17]_i_1__4_n_0     | channel[7].u_dsp/rst_n |                5 |             18 |         3.60 |
+|  clk_IBUF_BUFG | channel[5].u_dsp/coeffs[3][17]_i_1__4_n_0     | channel[7].u_dsp/rst_n |                4 |             18 |         4.50 |
+|  clk_IBUF_BUFG | channel[0].u_dsp/coeffs[3][17]_i_1_n_0        | channel[7].u_dsp/rst_n |                3 |             18 |         6.00 |
+|  clk_IBUF_BUFG | channel[0].u_dsp/coeffs[4][17]_i_1_n_0        | channel[7].u_dsp/rst_n |                3 |             18 |         6.00 |
+|  clk_IBUF_BUFG | channel[0].u_dsp/coeffs[5][17]_i_1_n_0        | channel[7].u_dsp/rst_n |                4 |             18 |         4.50 |
+|  clk_IBUF_BUFG | channel[0].u_dsp/coeffs[2][17]_i_1_n_0        | channel[7].u_dsp/rst_n |                4 |             18 |         4.50 |
+|  clk_IBUF_BUFG | channel[0].u_dsp/coeffs[13][17]_i_1_n_0       | channel[7].u_dsp/rst_n |                5 |             18 |         3.60 |
+|  clk_IBUF_BUFG | channel[0].u_dsp/coeffs[8][17]_i_1_n_0        | channel[7].u_dsp/rst_n |                3 |             18 |         6.00 |
+|  clk_IBUF_BUFG | channel[0].u_dsp/coeffs[10][17]_i_1_n_0       | channel[7].u_dsp/rst_n |                5 |             18 |         3.60 |
+|  clk_IBUF_BUFG | channel[0].u_dsp/coeffs[11][17]_i_1_n_0       | channel[7].u_dsp/rst_n |                4 |             18 |         4.50 |
+|  clk_IBUF_BUFG | channel[0].u_dsp/coeffs[12][17]_i_1_n_0       | channel[7].u_dsp/rst_n |                3 |             18 |         6.00 |
+|  clk_IBUF_BUFG | channel[0].u_dsp/coeffs[6][17]_i_1_n_0        | channel[7].u_dsp/rst_n |                4 |             18 |         4.50 |
+|  clk_IBUF_BUFG | channel[0].u_dsp/coeffs[14][17]_i_1_n_0       | channel[7].u_dsp/rst_n |                4 |             18 |         4.50 |
+|  clk_IBUF_BUFG | channel[0].u_dsp/coeffs[7][17]_i_1_n_0        | channel[7].u_dsp/rst_n |                3 |             18 |         6.00 |
+|  clk_IBUF_BUFG | channel[0].u_dsp/coeffs[9][17]_i_1_n_0        | channel[7].u_dsp/rst_n |                4 |             18 |         4.50 |
+|  clk_IBUF_BUFG | channel[0].u_dsp/coeffs[0][17]_i_1_n_0        | channel[7].u_dsp/rst_n |                3 |             18 |         6.00 |
+|  clk_IBUF_BUFG | channel[0].u_dsp/coeffs[1][17]_i_1_n_0        | channel[7].u_dsp/rst_n |                3 |             18 |         6.00 |
+|  clk_IBUF_BUFG | channel[0].u_dsp/coeffs[0]                    | channel[7].u_dsp/rst_n |                3 |             18 |         6.00 |
+|  clk_IBUF_BUFG | channel[6].u_dsp/coeffs[10][17]_i_1__5_n_0    | channel[7].u_dsp/rst_n |                4 |             18 |         4.50 |
+|  clk_IBUF_BUFG | channel[6].u_dsp/coeffs[5][17]_i_1__5_n_0     | channel[7].u_dsp/rst_n |                3 |             18 |         6.00 |
+|  clk_IBUF_BUFG | channel[6].u_dsp/coeffs[14][17]_i_1__5_n_0    | channel[7].u_dsp/rst_n |                4 |             18 |         4.50 |
+|  clk_IBUF_BUFG | channel[6].u_dsp/coeffs[6][17]_i_1__5_n_0     | channel[7].u_dsp/rst_n |                5 |             18 |         3.60 |
+|  clk_IBUF_BUFG | channel[6].u_dsp/coeffs[4][17]_i_1__5_n_0     | channel[7].u_dsp/rst_n |                3 |             18 |         6.00 |
+|  clk_IBUF_BUFG | channel[6].u_dsp/coeffs[11][17]_i_1__5_n_0    | channel[7].u_dsp/rst_n |                5 |             18 |         3.60 |
+|  clk_IBUF_BUFG | channel[6].u_dsp/coeffs[12][17]_i_1__5_n_0    | channel[7].u_dsp/rst_n |                3 |             18 |         6.00 |
+|  clk_IBUF_BUFG | channel[6].u_dsp/coeffs[13][17]_i_1__5_n_0    | channel[7].u_dsp/rst_n |                4 |             18 |         4.50 |
+|  clk_IBUF_BUFG | channel[6].u_dsp/coeffs[1][17]_i_1__5_n_0     | channel[7].u_dsp/rst_n |                4 |             18 |         4.50 |
+|  clk_IBUF_BUFG | channel[6].u_dsp/coeffs[3][17]_i_1__5_n_0     | channel[7].u_dsp/rst_n |                4 |             18 |         4.50 |
+|  clk_IBUF_BUFG | channel[6].u_dsp/coeffs[0][17]_i_1__5_n_0     | channel[7].u_dsp/rst_n |                3 |             18 |         6.00 |
+|  clk_IBUF_BUFG | channel[6].u_dsp/coeffs[7][17]_i_1__5_n_0     | channel[7].u_dsp/rst_n |                3 |             18 |         6.00 |
+|  clk_IBUF_BUFG | channel[6].u_dsp/coeffs[8][17]_i_1__5_n_0     | channel[7].u_dsp/rst_n |                3 |             18 |         6.00 |
+|  clk_IBUF_BUFG | channel[6].u_dsp/coeffs[2][17]_i_1__5_n_0     | channel[7].u_dsp/rst_n |                5 |             18 |         3.60 |
+|  clk_IBUF_BUFG | channel[6].u_dsp/coeffs[9][17]_i_1__5_n_0     | channel[7].u_dsp/rst_n |                5 |             18 |         3.60 |
+|  clk_IBUF_BUFG | channel[6].u_dsp/coeffs[0]                    | channel[7].u_dsp/rst_n |                3 |             18 |         6.00 |
+|  clk_IBUF_BUFG | channel[7].u_dsp/coeffs[0][17]_i_1__6_n_0     | channel[7].u_dsp/rst_n |                3 |             18 |         6.00 |
+|  clk_IBUF_BUFG | channel[7].u_dsp/coeffs[10][17]_i_1__6_n_0    | channel[7].u_dsp/rst_n |                3 |             18 |         6.00 |
+|  clk_IBUF_BUFG | channel[7].u_dsp/coeffs[11][17]_i_1__6_n_0    | channel[7].u_dsp/rst_n |                4 |             18 |         4.50 |
+|  clk_IBUF_BUFG | channel[7].u_dsp/coeffs[12][17]_i_1__6_n_0    | channel[7].u_dsp/rst_n |                4 |             18 |         4.50 |
+|  clk_IBUF_BUFG | channel[7].u_dsp/coeffs[13][17]_i_1__6_n_0    | channel[7].u_dsp/rst_n |                3 |             18 |         6.00 |
+|  clk_IBUF_BUFG | channel[7].u_dsp/coeffs[14][17]_i_1__6_n_0    | channel[7].u_dsp/rst_n |                3 |             18 |         6.00 |
+|  clk_IBUF_BUFG | channel[7].u_dsp/coeffs[1][17]_i_1__6_n_0     | channel[7].u_dsp/rst_n |                5 |             18 |         3.60 |
+|  clk_IBUF_BUFG | channel[7].u_dsp/coeffs[3][17]_i_1__6_n_0     | channel[7].u_dsp/rst_n |                5 |             18 |         3.60 |
+|  clk_IBUF_BUFG | channel[7].u_dsp/coeffs[4][17]_i_1__6_n_0     | channel[7].u_dsp/rst_n |                4 |             18 |         4.50 |
+|  clk_IBUF_BUFG | channel[7].u_dsp/coeffs[7][17]_i_1__6_n_0     | channel[7].u_dsp/rst_n |                5 |             18 |         3.60 |
+|  clk_IBUF_BUFG | channel[7].u_dsp/coeffs[2][17]_i_1__6_n_0     | channel[7].u_dsp/rst_n |                5 |             18 |         3.60 |
+|  clk_IBUF_BUFG | channel[7].u_dsp/coeffs[9][17]_i_1__6_n_0     | channel[7].u_dsp/rst_n |                4 |             18 |         4.50 |
+|  clk_IBUF_BUFG | channel[7].u_dsp/coeffs[5][17]_i_1__6_n_0     | channel[7].u_dsp/rst_n |                4 |             18 |         4.50 |
+|  clk_IBUF_BUFG | channel[7].u_dsp/coeffs[6][17]_i_1__6_n_0     | channel[7].u_dsp/rst_n |                4 |             18 |         4.50 |
+|  clk_IBUF_BUFG | channel[7].u_dsp/coeffs[8][17]_i_1__6_n_0     | channel[7].u_dsp/rst_n |                3 |             18 |         6.00 |
+|  clk_IBUF_BUFG | channel[7].u_dsp/coeffs[0]                    | channel[7].u_dsp/rst_n |                4 |             18 |         4.50 |
+|  clk_IBUF_BUFG | channel[5].u_dsp/coeffs[0]                    | channel[7].u_dsp/rst_n |                4 |             18 |         4.50 |
+|  clk_IBUF_BUFG | ch_data_in[4][17]_i_1_n_0                     |                        |                3 |             18 |         6.00 |
+|  clk_IBUF_BUFG | ch_data_in[3][17]_i_1_n_0                     |                        |                3 |             18 |         6.00 |
+|  clk_IBUF_BUFG | ch_data_in[6][17]_i_1_n_0                     |                        |                5 |             18 |         3.60 |
+|  clk_IBUF_BUFG | ch_data_in[2][17]_i_1_n_0                     |                        |                5 |             18 |         3.60 |
+|  clk_IBUF_BUFG | ch_data_in[7][17]_i_1_n_0                     |                        |                6 |             18 |         3.00 |
+|  clk_IBUF_BUFG | channel[3].u_dsp/coeffs[5][17]_i_1__2_n_0     | channel[7].u_dsp/rst_n |                4 |             18 |         4.50 |
+|  clk_IBUF_BUFG | channel[4].u_dsp/coeffs[14][17]_i_1__3_n_0    | channel[7].u_dsp/rst_n |                3 |             18 |         6.00 |
+|  clk_IBUF_BUFG | channel[4].u_dsp/coeffs[7][17]_i_1__3_n_0     | channel[7].u_dsp/rst_n |                5 |             18 |         3.60 |
+|  clk_IBUF_BUFG | channel[4].u_dsp/coeffs[13][17]_i_1__3_n_0    | channel[7].u_dsp/rst_n |                5 |             18 |         3.60 |
+|  clk_IBUF_BUFG | channel[4].u_dsp/coeffs[10][17]_i_1__3_n_0    | channel[7].u_dsp/rst_n |                3 |             18 |         6.00 |
+|  clk_IBUF_BUFG | channel[4].u_dsp/coeffs[3][17]_i_1__3_n_0     | channel[7].u_dsp/rst_n |                5 |             18 |         3.60 |
+|  clk_IBUF_BUFG | channel[4].u_dsp/coeffs[1][17]_i_1__3_n_0     | channel[7].u_dsp/rst_n |                3 |             18 |         6.00 |
+|  clk_IBUF_BUFG | channel[4].u_dsp/coeffs[9][17]_i_1__3_n_0     | channel[7].u_dsp/rst_n |                4 |             18 |         4.50 |
+|  clk_IBUF_BUFG | ch_valid_in[1]_i_1_n_0                        |                        |                4 |             19 |         4.75 |
+|  clk_IBUF_BUFG | ch_valid_in[0]_i_1_n_0                        |                        |                5 |             19 |         3.80 |
+|  clk_IBUF_BUFG | ch_valid_in[5]_i_1_n_0                        |                        |                4 |             19 |         4.75 |
+|  clk_IBUF_BUFG | stats[7].u_stats/stat_max[23]_i_1__6_n_0      | channel[7].u_dsp/rst_n |                8 |             24 |         3.00 |
+|  clk_IBUF_BUFG | stats[7].u_stats/stat_min[23]_i_1__6_n_0      | channel[7].u_dsp/rst_n |                3 |             24 |         8.00 |
+|  clk_IBUF_BUFG | stats[4].u_stats/stat_max[23]_i_1__3_n_0      | channel[7].u_dsp/rst_n |                6 |             24 |         4.00 |
+|  clk_IBUF_BUFG | stats[1].u_stats/stat_max[23]_i_1__0_n_0      | channel[7].u_dsp/rst_n |                6 |             24 |         4.00 |
+|  clk_IBUF_BUFG | stats[1].u_stats/stat_min[23]_i_1__0_n_0      | channel[7].u_dsp/rst_n |                6 |             24 |         4.00 |
+|  clk_IBUF_BUFG | stats[0].u_stats/stat_min[23]_i_1_n_0         | channel[7].u_dsp/rst_n |                6 |             24 |         4.00 |
+|  clk_IBUF_BUFG | stats[2].u_stats/stat_max[23]_i_1__1_n_0      | channel[7].u_dsp/rst_n |               10 |             24 |         2.40 |
+|  clk_IBUF_BUFG | stats[2].u_stats/stat_min[23]_i_1__1_n_0      | channel[7].u_dsp/rst_n |                8 |             24 |         3.00 |
+|  clk_IBUF_BUFG | stats[3].u_stats/stat_max[23]_i_1__2_n_0      | channel[7].u_dsp/rst_n |                5 |             24 |         4.80 |
+|  clk_IBUF_BUFG | stats[3].u_stats/stat_min[23]_i_1__2_n_0      | channel[7].u_dsp/rst_n |                7 |             24 |         3.43 |
+|  clk_IBUF_BUFG | stats[0].u_stats/stat_max[23]_i_1_n_0         | channel[7].u_dsp/rst_n |                5 |             24 |         4.80 |
+|  clk_IBUF_BUFG | stats[6].u_stats/stat_min[23]_i_1__5_n_0      | channel[7].u_dsp/rst_n |                6 |             24 |         4.00 |
+|  clk_IBUF_BUFG | stats[4].u_stats/stat_min[23]_i_1__3_n_0      | channel[7].u_dsp/rst_n |                7 |             24 |         3.43 |
+|  clk_IBUF_BUFG | stats[5].u_stats/stat_max[23]_i_1__4_n_0      | channel[7].u_dsp/rst_n |                7 |             24 |         3.43 |
+|  clk_IBUF_BUFG | stats[5].u_stats/stat_min[23]_i_1__4_n_0      | channel[7].u_dsp/rst_n |                6 |             24 |         4.00 |
+|  clk_IBUF_BUFG | cfg_regs_reg_n_0_[0][5]_repN_6                | channel[7].u_dsp/rst_n |                6 |             24 |         4.00 |
+|  clk_IBUF_BUFG | stats[6].u_stats/stat_max[23]_i_1__5_n_0      | channel[7].u_dsp/rst_n |                7 |             24 |         3.43 |
+|  clk_IBUF_BUFG | cfg_regs_reg_n_0_[0][5]_repN_5                | channel[7].u_dsp/rst_n |                8 |             31 |         3.88 |
+|  clk_IBUF_BUFG | cfg_regs[19][31]_i_1_n_0                      | channel[7].u_dsp/rst_n |               11 |             32 |         2.91 |
+|  clk_IBUF_BUFG | cfg_regs[13][31]_i_1_n_0                      | channel[7].u_dsp/rst_n |                9 |             32 |         3.56 |
+|  clk_IBUF_BUFG | cfg_regs[20][31]_i_1_n_0                      | channel[7].u_dsp/rst_n |               10 |             32 |         3.20 |
+|  clk_IBUF_BUFG | cfg_regs[26][31]_i_1_n_0                      | channel[7].u_dsp/rst_n |               10 |             32 |         3.20 |
+|  clk_IBUF_BUFG | cfg_regs[27][31]_i_1_n_0                      | channel[7].u_dsp/rst_n |               10 |             32 |         3.20 |
+|  clk_IBUF_BUFG | cfg_regs[21][31]_i_1_n_0                      | channel[7].u_dsp/rst_n |               10 |             32 |         3.20 |
+|  clk_IBUF_BUFG | cfg_regs[22][31]_i_1_n_0                      | channel[7].u_dsp/rst_n |               12 |             32 |         2.67 |
+|  clk_IBUF_BUFG | cfg_regs[28][31]_i_1_n_0                      | channel[7].u_dsp/rst_n |                9 |             32 |         3.56 |
+|  clk_IBUF_BUFG | cfg_regs[30][31]_i_1_n_0                      | channel[7].u_dsp/rst_n |               13 |             32 |         2.46 |
+|  clk_IBUF_BUFG | cfg_regs[25][31]_i_1_n_0                      | channel[7].u_dsp/rst_n |               12 |             32 |         2.67 |
+|  clk_IBUF_BUFG | cfg_regs[12][31]_i_1_n_0                      | channel[7].u_dsp/rst_n |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | cfg_regs[29][31]_i_1_n_0                      | channel[7].u_dsp/rst_n |               10 |             32 |         3.20 |
+|  clk_IBUF_BUFG | cfg_regs[5][31]_i_1_n_0                       | channel[7].u_dsp/rst_n |               12 |             32 |         2.67 |
+|  clk_IBUF_BUFG | cfg_regs[11][31]_i_1_n_0                      | channel[7].u_dsp/rst_n |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | cfg_regs[6][31]_i_1_n_0                       | channel[7].u_dsp/rst_n |               11 |             32 |         2.91 |
+|  clk_IBUF_BUFG | cfg_regs[15][31]_i_1_n_0                      | channel[7].u_dsp/rst_n |                7 |             32 |         4.57 |
+|  clk_IBUF_BUFG | cfg_regs[17][31]_i_1_n_0                      | channel[7].u_dsp/rst_n |                8 |             32 |         4.00 |
+|  clk_IBUF_BUFG | cfg_regs[4][31]_i_1_n_0                       | channel[7].u_dsp/rst_n |                7 |             32 |         4.57 |
+|  clk_IBUF_BUFG | cfg_regs[8][31]_i_1_n_0                       | channel[7].u_dsp/rst_n |               11 |             32 |         2.91 |
+|  clk_IBUF_BUFG | cfg_regs[0]                                   | channel[7].u_dsp/rst_n |               21 |             32 |         1.52 |
+|  clk_IBUF_BUFG | cfg_regs[9][31]_i_1_n_0                       | channel[7].u_dsp/rst_n |               18 |             32 |         1.78 |
+|  clk_IBUF_BUFG | cfg_regs[7][31]_i_1_n_0                       | channel[7].u_dsp/rst_n |               20 |             32 |         1.60 |
+|  clk_IBUF_BUFG | cfg_regs[23][31]_i_1_n_0                      | channel[7].u_dsp/rst_n |               21 |             32 |         1.52 |
+|  clk_IBUF_BUFG | cfg_regs[10][31]_i_1_n_0                      | channel[7].u_dsp/rst_n |                9 |             32 |         3.56 |
+|  clk_IBUF_BUFG | cfg_regs[14][31]_i_1_n_0                      | channel[7].u_dsp/rst_n |                7 |             32 |         4.57 |
+|  clk_IBUF_BUFG | cfg_regs[16][31]_i_1_n_0                      | channel[7].u_dsp/rst_n |               11 |             32 |         2.91 |
+|  clk_IBUF_BUFG | cfg_regs[18][31]_i_1_n_0                      | channel[7].u_dsp/rst_n |               10 |             32 |         3.20 |
+|  clk_IBUF_BUFG | cfg_regs[1][31]_i_1_n_0                       | channel[7].u_dsp/rst_n |               10 |             32 |         3.20 |
+|  clk_IBUF_BUFG | cfg_regs[24][31]_i_1_n_0                      | channel[7].u_dsp/rst_n |                9 |             32 |         3.56 |
+|  clk_IBUF_BUFG | cfg_regs[2][31]_i_1_n_0                       | channel[7].u_dsp/rst_n |               11 |             33 |         3.00 |
+|  clk_IBUF_BUFG | cfg_regs[3][31]_i_1_n_0                       | channel[7].u_dsp/rst_n |               17 |             37 |         2.18 |
+|  clk_IBUF_BUFG | cfg_regs_reg_n_0_[0][2]_repN_4                | channel[7].u_dsp/rst_n |               13 |             46 |         3.54 |
+|  clk_IBUF_BUFG | cfg_regs_reg_n_0_[0][7]_repN_7                | channel[7].u_dsp/rst_n |               12 |             48 |         4.00 |
+|  clk_IBUF_BUFG | cfg_regs_reg_n_0_[0][7]_repN_5                | channel[7].u_dsp/rst_n |               12 |             48 |         4.00 |
+|  clk_IBUF_BUFG | cfg_regs_reg_n_0_[0][2]_repN_2                | channel[7].u_dsp/rst_n |               12 |             48 |         4.00 |
+|  clk_IBUF_BUFG | cfg_regs_reg_n_0_[0][0]_repN_1                | channel[7].u_dsp/rst_n |               12 |             48 |         4.00 |
+|  clk_IBUF_BUFG | cfg_regs_reg_n_0_[0][2]_repN_3                | channel[7].u_dsp/rst_n |               12 |             48 |         4.00 |
+|  clk_IBUF_BUFG | cfg_regs_reg_n_0_[0][4]_repN_5                | channel[7].u_dsp/rst_n |               12 |             48 |         4.00 |
+|  clk_IBUF_BUFG | cfg_regs_reg_n_0_[0][4]_repN_4                | channel[7].u_dsp/rst_n |               13 |             48 |         3.69 |
+|  clk_IBUF_BUFG | cfg_regs_reg_n_0_[0][2]_repN_1                | channel[7].u_dsp/rst_n |               13 |             50 |         3.85 |
+|  clk_IBUF_BUFG | cfg_regs_reg_n_0_[0][5]_repN_2                | channel[7].u_dsp/rst_n |               13 |             50 |         3.85 |
+|  clk_IBUF_BUFG | stats[4].u_stats/mean_reg[0]_i_1__3_n_0       | channel[7].u_dsp/rst_n |               14 |             56 |         4.00 |
+|  clk_IBUF_BUFG | stats[1].u_stats/mean_reg[0]_i_1__0_n_0       | channel[7].u_dsp/rst_n |               14 |             56 |         4.00 |
+|  clk_IBUF_BUFG | stats[5].u_stats/mean_reg[0]_i_1__4_n_0       | channel[7].u_dsp/rst_n |               14 |             56 |         4.00 |
+|  clk_IBUF_BUFG | stats[7].u_stats/mean_reg[0]_i_1__6_n_0       | channel[7].u_dsp/rst_n |               14 |             56 |         4.00 |
+|  clk_IBUF_BUFG | stats[0].u_stats/mean_reg[0]_i_1_n_0          | channel[7].u_dsp/rst_n |               14 |             56 |         4.00 |
+|  clk_IBUF_BUFG | stats[6].u_stats/mean_reg[0]_i_1__5_n_0       | channel[7].u_dsp/rst_n |               14 |             56 |         4.00 |
+|  clk_IBUF_BUFG | stats[3].u_stats/mean_reg[0]_i_1__2_n_0       | channel[7].u_dsp/rst_n |               14 |             56 |         4.00 |
+|  clk_IBUF_BUFG | stats[2].u_stats/mean_reg[0]_i_1__1_n_0       | channel[7].u_dsp/rst_n |               14 |             56 |         4.00 |
+|  clk_IBUF_BUFG | cfg_regs_reg_n_0_[0][0]_repN_6                | channel[7].u_dsp/rst_n |               18 |             72 |         4.00 |
+|  clk_IBUF_BUFG | cfg_regs_reg_n_0_[0][7]_repN_4                | channel[7].u_dsp/rst_n |               18 |             72 |         4.00 |
+|  clk_IBUF_BUFG | cfg_regs_reg_n_0_[0][5]_repN_3                | channel[7].u_dsp/rst_n |               18 |             72 |         4.00 |
+|  clk_IBUF_BUFG | cfg_regs_reg_n_0_[0][7]_repN_3                | channel[7].u_dsp/rst_n |               18 |             72 |         4.00 |
+|  clk_IBUF_BUFG | cfg_regs_reg_n_0_[0][5]_repN_4                | channel[7].u_dsp/rst_n |               18 |             72 |         4.00 |
+|  clk_IBUF_BUFG | cfg_regs_reg_n_0_[0][2]_repN_5                | channel[7].u_dsp/rst_n |               18 |             72 |         4.00 |
+|  clk_IBUF_BUFG | cfg_regs_reg_n_0_[0][7]_repN_6                | channel[7].u_dsp/rst_n |               18 |             72 |         4.00 |
+|  clk_IBUF_BUFG | cfg_regs_reg_n_0_[0][0]_repN                  | channel[7].u_dsp/rst_n |               18 |             73 |         4.06 |
+|  clk_IBUF_BUFG | cfg_regs_reg_n_0_[0][5]_repN                  | channel[7].u_dsp/rst_n |               20 |             76 |         3.80 |
+|  clk_IBUF_BUFG | cfg_regs[0][31]_i_1_n_0                       | channel[7].u_dsp/rst_n |               50 |             79 |         1.58 |
+|  clk_IBUF_BUFG | cfg_regs_reg_n_0_[0][5]_repN_1                | channel[7].u_dsp/rst_n |               22 |             87 |         3.95 |
+|  clk_IBUF_BUFG | cfg_regs_reg_n_0_[0][4]_repN                  | channel[7].u_dsp/rst_n |               22 |             88 |         4.00 |
+|  clk_IBUF_BUFG | cfg_regs_reg_n_0_[0][7]_repN_1                | channel[7].u_dsp/rst_n |               24 |             96 |         4.00 |
+|  clk_IBUF_BUFG | cfg_regs_reg_n_0_[0][4]_repN_6                | channel[7].u_dsp/rst_n |               24 |             96 |         4.00 |
+|  clk_IBUF_BUFG | cfg_regs_reg_n_0_[0][0]_repN_3                | channel[7].u_dsp/rst_n |               24 |             96 |         4.00 |
+|  clk_IBUF_BUFG | cfg_regs_reg_n_0_[0][0]_repN_2                | channel[7].u_dsp/rst_n |               32 |            120 |         3.75 |
+|  clk_IBUF_BUFG | cfg_regs_reg_n_0_[0][4]_repN_2                | channel[7].u_dsp/rst_n |               36 |            144 |         4.00 |
+|  clk_IBUF_BUFG | cfg_regs_reg_n_0_[0][2]_repN_7                | channel[7].u_dsp/rst_n |               36 |            145 |         4.03 |
+|  clk_IBUF_BUFG |                                               |                        |              111 |            238 |         2.14 |
+|  clk_IBUF_BUFG | channel[0].u_dsp/delay_line[0][17]_i_1_n_0    | channel[7].u_dsp/rst_n |               73 |            325 |         4.45 |
+|  clk_IBUF_BUFG | channel[3].u_dsp/delay_line[0][17]_i_1__2_n_0 | channel[7].u_dsp/rst_n |               78 |            325 |         4.17 |
+|  clk_IBUF_BUFG | channel[5].u_dsp/delay_line[0][17]_i_1__4_n_0 | channel[7].u_dsp/rst_n |               75 |            325 |         4.33 |
+|  clk_IBUF_BUFG | channel[1].u_dsp/delay_line[0][17]_i_1__0_n_0 | channel[7].u_dsp/rst_n |               72 |            325 |         4.51 |
+|  clk_IBUF_BUFG | channel[4].u_dsp/delay_line[0][17]_i_1__3_n_0 | channel[7].u_dsp/rst_n |               82 |            325 |         3.96 |
+|  clk_IBUF_BUFG | channel[7].u_dsp/delay_line[0][17]_i_1__6_n_0 | channel[7].u_dsp/rst_n |               72 |            325 |         4.51 |
+|  clk_IBUF_BUFG | channel[6].u_dsp/delay_line[0][17]_i_1__5_n_0 | channel[7].u_dsp/rst_n |               82 |            325 |         3.96 |
+|  clk_IBUF_BUFG | channel[2].u_dsp/delay_line[0][17]_i_1__1_n_0 | channel[7].u_dsp/rst_n |               88 |            325 |         3.69 |
+|  clk_IBUF_BUFG |                                               | channel[7].u_dsp/rst_n |              158 |            408 |         2.58 |
+|  clk_IBUF_BUFG | cfg_regs_reg_n_0_[0][1]                       | channel[7].u_dsp/rst_n |              111 |            425 |         3.83 |
+|  clk_IBUF_BUFG | cfg_regs_reg_n_0_[0][3]                       | channel[7].u_dsp/rst_n |              107 |            425 |         3.97 |
+|  clk_IBUF_BUFG | cfg_regs_reg_n_0_[0][6]                       | channel[7].u_dsp/rst_n |              114 |            425 |         3.73 |
++----------------+-----------------------------------------------+------------------------+------------------+----------------+--------------+
+
+

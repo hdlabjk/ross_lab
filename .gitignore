@@ -1,0 +1,9 @@
+old/
+.Xil/
+.vivado/
+update/
+rep/
+*.tgz
+vivado*
+*~
+#*

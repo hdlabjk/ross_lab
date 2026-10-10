@@ -1,0 +1,936 @@
+
+*** Running vivado
+    with args -log mreduc.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source mreduc.tcl
+
+
+
+****** Vivado v2025.2 (64-bit)
+  **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025
+  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+  **** Start of session at: Thu Oct  8 10:41:09 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source mreduc.tcl -notrace
+create_project: Time (s): cpu = 00:00:09 ; elapsed = 00:00:06 . Memory (MB): peak = 542.328 ; gain = 221.531
+Command: synth_design -top mreduc -part xc7a100tfgg676-2
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
+INFO: [Device 21-403] Loading part xc7a100tfgg676-2
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 15004
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1287.309 ; gain = 542.379
+---------------------------------------------------------------------------------
+INFO: [Synth 8-11241] undeclared symbol 'stat_min_out', assumed default net type 'wire' [C:/cygwin64/home/jkikkawa/src/ai-assistant-ea/lab6/src/mreduc.sv:225]
+INFO: [Synth 8-11241] undeclared symbol 'stat_max_out', assumed default net type 'wire' [C:/cygwin64/home/jkikkawa/src/ai-assistant-ea/lab6/src/mreduc.sv:226]
+INFO: [Synth 8-11241] undeclared symbol 'stat_mean_out', assumed default net type 'wire' [C:/cygwin64/home/jkikkawa/src/ai-assistant-ea/lab6/src/mreduc.sv:227]
+INFO: [Synth 8-6157] synthesizing module 'mreduc' [C:/cygwin64/home/jkikkawa/src/ai-assistant-ea/lab6/src/mreduc.sv:15]
+INFO: [Synth 8-6157] synthesizing module 'dsp_pipeline' [C:/cygwin64/home/jkikkawa/src/ai-assistant-ea/lab6/src/dsp_pipeline.sv:15]
+	Parameter WIDTH bound to: 18 - type: integer 
+	Parameter ACC_WIDTH bound to: 24 - type: integer 
+	Parameter NUM_TAPS bound to: 16 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'dsp_pipeline' (0#1) [C:/cygwin64/home/jkikkawa/src/ai-assistant-ea/lab6/src/dsp_pipeline.sv:15]
+INFO: [Synth 8-6157] synthesizing module 'stats_engine' [C:/cygwin64/home/jkikkawa/src/ai-assistant-ea/lab6/src/stats_engine.sv:9]
+	Parameter DATA_WIDTH bound to: 24 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'stats_engine' (0#1) [C:/cygwin64/home/jkikkawa/src/ai-assistant-ea/lab6/src/stats_engine.sv:9]
+INFO: [Synth 8-6155] done synthesizing module 'mreduc' (0#1) [C:/cygwin64/home/jkikkawa/src/ai-assistant-ea/lab6/src/mreduc.sv:15]
+WARNING: [Synth 8-6014] Unused sequential element diff_reg was removed.  [C:/cygwin64/home/jkikkawa/src/ai-assistant-ea/lab6/src/stats_engine.sv:52]
+WARNING: [Synth 8-6014] Unused sequential element hist_addr_r_reg was removed.  [C:/cygwin64/home/jkikkawa/src/ai-assistant-ea/lab6/src/stats_engine.sv:86]
+WARNING: [Synth 8-6014] Unused sequential element hist_valid_r_reg was removed.  [C:/cygwin64/home/jkikkawa/src/ai-assistant-ea/lab6/src/stats_engine.sv:87]
+WARNING: [Synth 8-6014] Unused sequential element hist_rdata_reg was removed.  [C:/cygwin64/home/jkikkawa/src/ai-assistant-ea/lab6/src/stats_engine.sv:96]
+WARNING: [Synth 8-6014] Unused sequential element hist_addr_rr_reg was removed.  [C:/cygwin64/home/jkikkawa/src/ai-assistant-ea/lab6/src/stats_engine.sv:97]
+WARNING: [Synth 8-6014] Unused sequential element hist_valid_rr_reg was removed.  [C:/cygwin64/home/jkikkawa/src/ai-assistant-ea/lab6/src/stats_engine.sv:98]
+WARNING: [Synth 8-6014] Unused sequential element hist_mem_reg was removed. 
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1415.402 ; gain = 670.473
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1415.402 ; gain = 670.473
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1415.402 ; gain = 670.473
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.148 . Memory (MB): peak = 1415.402 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [C:/cygwin64/home/jkikkawa/src/ai-assistant-ea/lab6/constraints/mreduc.xdc]
+Finished Parsing XDC File [C:/cygwin64/home/jkikkawa/src/ai-assistant-ea/lab6/constraints/mreduc.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.010 . Memory (MB): peak = 1499.926 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.331 . Memory (MB): peak = 1499.926 ; gain = 0.000
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 1499.926 ; gain = 754.996
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tfgg676-2
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 1499.926 ; gain = 754.996
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 1499.926 ; gain = 754.996
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1499.926 ; gain = 754.996
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   24 Bit       Adders := 128   
+	   3 Input   24 Bit       Adders := 8     
+	   2 Input   19 Bit       Adders := 8     
++---Registers : 
+	               36 Bit    Registers := 128   
+	               32 Bit    Registers := 32    
+	               24 Bit    Registers := 177   
+	               19 Bit    Registers := 8     
+	               18 Bit    Registers := 272   
+	               16 Bit    Registers := 8     
+	                8 Bit    Registers := 5     
+	                4 Bit    Registers := 8     
+	                3 Bit    Registers := 2     
+	                2 Bit    Registers := 3     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   2 Input   24 Bit        Muxes := 24    
+	   2 Input    1 Bit        Muxes := 184   
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+DSP Report: Generating DSP p_0_out, operation Mode is: A*B.
+DSP Report: operator p_0_out is absorbed into DSP p_0_out.
+WARNING: [Synth 8-3917] design mreduc has port byte_min_out[7] driven by constant 0
+WARNING: [Synth 8-3917] design mreduc has port byte_min_out[6] driven by constant 0
+WARNING: [Synth 8-3917] design mreduc has port byte_min_out[5] driven by constant 0
+WARNING: [Synth 8-3917] design mreduc has port byte_min_out[4] driven by constant 0
+WARNING: [Synth 8-3917] design mreduc has port byte_min_out[3] driven by constant 0
+WARNING: [Synth 8-3917] design mreduc has port byte_min_out[2] driven by constant 0
+WARNING: [Synth 8-3917] design mreduc has port byte_min_out[1] driven by constant 0
+WARNING: [Synth 8-3917] design mreduc has port byte_max_out[7] driven by constant 0
+WARNING: [Synth 8-3917] design mreduc has port byte_max_out[6] driven by constant 0
+WARNING: [Synth 8-3917] design mreduc has port byte_max_out[5] driven by constant 0
+WARNING: [Synth 8-3917] design mreduc has port byte_max_out[4] driven by constant 0
+WARNING: [Synth 8-3917] design mreduc has port byte_max_out[3] driven by constant 0
+WARNING: [Synth 8-3917] design mreduc has port byte_max_out[2] driven by constant 0
+WARNING: [Synth 8-3917] design mreduc has port byte_max_out[1] driven by constant 0
+WARNING: [Synth 8-3917] design mreduc has port byte_mean_out[7] driven by constant 0
+WARNING: [Synth 8-3917] design mreduc has port byte_mean_out[6] driven by constant 0
+WARNING: [Synth 8-3917] design mreduc has port byte_mean_out[5] driven by constant 0
+WARNING: [Synth 8-3917] design mreduc has port byte_mean_out[4] driven by constant 0
+WARNING: [Synth 8-3917] design mreduc has port byte_mean_out[3] driven by constant 0
+WARNING: [Synth 8-3917] design mreduc has port byte_mean_out[2] driven by constant 0
+WARNING: [Synth 8-3917] design mreduc has port byte_mean_out[1] driven by constant 0
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 1553.160 ; gain = 808.230
+---------------------------------------------------------------------------------
+ Sort Area is  p_0_out_0 : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_10 : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_11 : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_12 : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_13 : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_14 : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_15 : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_16 : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_17 : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_18 : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_19 : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_1a : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_1b : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_1c : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_1d : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_1e : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_1f : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_2 : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_20 : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_21 : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_22 : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_23 : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_24 : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_25 : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_26 : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_27 : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_28 : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_29 : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_2a : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_2b : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_2c : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_2d : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_2e : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_2f : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_3 : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_30 : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_31 : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_32 : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_33 : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_34 : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_35 : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_36 : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_37 : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_38 : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_39 : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_3a : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_3b : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_3c : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_3d : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_3e : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_3f : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_4 : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_40 : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_41 : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_42 : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_43 : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_44 : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_45 : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_46 : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_47 : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_48 : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_49 : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_4a : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_4b : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_4c : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_4d : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_4e : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_4f : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_5 : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_50 : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_51 : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_52 : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_53 : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_54 : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_55 : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_56 : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_57 : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_58 : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_59 : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_5a : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_5b : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_5c : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_5d : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_5e : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_5f : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_6 : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_60 : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_61 : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_62 : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_63 : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_64 : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_65 : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_66 : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_67 : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_68 : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_69 : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_6a : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_6b : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_6c : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_6d : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_6e : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_6f : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_7 : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_70 : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_71 : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_72 : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_73 : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_74 : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_75 : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_76 : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_77 : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_78 : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_79 : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_7a : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_7b : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_7c : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_7d : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_7e : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_7f : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_8 : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_80 : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_9 : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_a : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_b : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_c : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_d : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_e : 0 0 : 2478 2478 : Used 1 time 0
+ Sort Area is  p_0_out_f : 0 0 : 2478 2478 : Used 1 time 0
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+DSP: Preliminary Mapping Report (see note below. The ' indicates corresponding REG is set)
++-------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name  | DSP Mapping | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++-------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|dsp_pipeline | A*B         | 18     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 0    | 
++-------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 1687.934 ; gain = 943.004
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:41 ; elapsed = 00:00:42 . Memory (MB): peak = 1762.793 ; gain = 1017.863
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:47 ; elapsed = 00:00:48 . Memory (MB): peak = 1807.332 ; gain = 1062.402
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:51 ; elapsed = 00:00:52 . Memory (MB): peak = 2007.207 ; gain = 1262.277
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:51 ; elapsed = 00:00:52 . Memory (MB): peak = 2007.207 ; gain = 1262.277
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:53 ; elapsed = 00:00:54 . Memory (MB): peak = 2007.207 ; gain = 1262.277
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:53 ; elapsed = 00:00:54 . Memory (MB): peak = 2007.207 ; gain = 1262.277
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:53 ; elapsed = 00:00:54 . Memory (MB): peak = 2007.207 ; gain = 1262.277
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:53 ; elapsed = 00:00:54 . Memory (MB): peak = 2007.207 ; gain = 1262.277
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+DSP Final Report (the ' indicates corresponding REG is set)
++-------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name  | DSP Mapping | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++-------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|dsp_pipeline | (A*B)'      | 30     | 18     | -      | -      | 36     | 0    | 0    | -    | -    | -     | 0    | 1    | 
++-------------+-------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+--------+------+
+|      |Cell    |Count |
++------+--------+------+
+|1     |BUFG    |     1|
+|2     |CARRY4  |  1016|
+|3     |DSP48E1 |   128|
+|4     |LUT1    |   217|
+|5     |LUT2    |   928|
+|6     |LUT3    |  2949|
+|7     |LUT4    |   392|
+|8     |LUT5    |   384|
+|9     |LUT6    |  1133|
+|10    |MUXF7   |   186|
+|11    |FDCE    | 10366|
+|12    |FDPE    |   208|
+|13    |FDRE    |   390|
+|14    |IBUF    |   121|
+|15    |OBUF    |   114|
++------+--------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:53 ; elapsed = 00:00:54 . Memory (MB): peak = 2007.207 ; gain = 1262.277
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 21 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:41 ; elapsed = 00:00:50 . Memory (MB): peak = 2007.207 ; gain = 1177.754
+Synthesis Optimization Complete : Time (s): cpu = 00:00:53 ; elapsed = 00:00:54 . Memory (MB): peak = 2007.207 ; gain = 1262.277
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.174 . Memory (MB): peak = 2023.262 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 1330 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 2027.902 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete | Checksum: ce78e8a6
+INFO: [Common 17-83] Releasing license: Synthesis
+23 Infos, 28 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:01 ; elapsed = 00:01:04 . Memory (MB): peak = 2027.902 ; gain = 1485.574
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.033 . Memory (MB): peak = 2027.902 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/cygwin64/home/jkikkawa/src/ai-assistant-ea/lab6/lab6/lab6.runs/synth_1/mreduc.dcp' has been generated.
+INFO: [Vivado 12-24828] Executing command : report_utilization -file mreduc_utilization_synth.rpt -pb mreduc_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Thu Oct  8 10:42:23 2026...
