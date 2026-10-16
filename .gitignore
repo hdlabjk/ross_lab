@@ -1,6 +1,7 @@
 old/
 .Xil/
 .vivado/
+.vivado-ai/
 update/
 rep/
 *.tgz
