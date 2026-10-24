@@ -29,9 +29,8 @@
 
 ||**Lab3**|
 | ---- | ---- |
-||Lab3を開始します。|
-||vivadoをGUIモードで開始してください。xc7a100tfgg676-2を使用するプロジェクトlab3 を作成してください。作業の中で作成されるレポートは、rep ディレクトリに保存し、RTL, XDC を変更する場合には、update ディレクトリに保存するものとします。すでに存在するRTL, XDC, DCP を更新してはいけません。|
-||src/packet_processor.vと constraints/packet_processor.xdcを使いデザインします。lintを実行し結果を rep/step1.lint.rptに保存し、rep/step1.lint.md にマークダウンフォーマットでまとめてください。|
+||Lab3を開始します。vivadoをGUIモードで開始してください。xc7a100tfgg676-2を使用するプロジェクトlab3を作成してください。作業の中で作成されるレポートは、repディレクトリに保存し、RTL, XDCを変更する場合には、updateディレクトリに保存するものとします。すでに存在するRTL, XDC, DCPを更新してはいけません。デザイン作業はまだ開始してはいけません。|
+||src/packet_processor.vとconstraints/packet_processor.xdcを使いデザインします。lintを実行し結果を rep/step1.lint.rptに保存し、rep/step1.lint.md にマークダウンフォーマットでまとめてください。|
 ||curr_state に関するcase 文で、この６つの状態に以外になることはありますか？curr_stateがこの６つの値以外になった状態から定義状態に復帰することはありますか？SEU(single event upset)はもっぱらレジスタで発生し、信号配線、FPGAのコンフィグRAMでは発生しないとします。|
 ||curr_stateを1bitエラー検出可能なハミングコーディックにするとcurr_state は何ビット必要になりますか？|
 ||default 状態をST_IDLE にした場合、mode_sel との関係でデッドロック状態になる、データを受信できない状態にもかかわらずrx_ready になりデータを連続して取りこぼしたり、tx_valid になり意味が無いデータを送り続けることはありますか？|
