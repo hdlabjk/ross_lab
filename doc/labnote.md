@@ -18,46 +18,52 @@ labの実行には以下のものが必要です。
 - Vivado ML 本日は2025.2 を使用します。2026.1.1, 2025.1, 2024.X も利用できるはずです。
 - AMD Vivado MCPサーバーとクライアント。AMDサイトからダウンロードします。Windows, Linux 共用で、ライセンス等は不要です。
 - AMD Knowledge。AMDのドキュメントに特化したチャット。クラウド上で実行されます。MCPサーバが利用しますが、単体でも利用できます。単体で利用する時は、webブラウザだけで追加ツールのインストール、ライセンス、登録は要りません。
-- 自然言語入力のためのCLI と、LLM。現在流通しているLLM であればどれでも使えます。クラウド上でも、ローカルでもMCP サーバに接続できるものであれば利用できます。本日は、VSCode + "GitHub Copilot+"を使います。**GitHub Copilot+**のライセンスは有料です。GitHub Coplit+はMicroSoft Office Copilot+は別製品です。
+- 自然言語入力のためのCLI と、LLM。現在流通しているLLM であればどれでも使えます。クラウド上でも、ローカルでもMCP サーバに接続できるものであれば利用できます。本日は、VSCode + "GitHub Copilot+"を使います。**GitHub Copilot+**のライセンスは有料です。GitHub Coplit Pro+はMicroSoft 365 Copilot+は別製品です。
 
-## Lab1　AMD Knowledgeの紹介とAMD Vivado MCPの設定
+## Lab1　AMD ナレッジ ベースの紹介 / AMD Knowledgeの紹介とAMD Vivado MCPの設定
 
 AMD Knowledgeにいくつかの質問を投げてみます。AMD Knowledge は登録、インストール不要で誰でも、どこでも使うことができます。
-
-| Lab1 prompt|
-| -------- |
-|`複数トラックを並列で扱うことができるVersal のNOC をバンド幅が最大にするためには、どのような構成が相応しいですか？`|
-|`セットアップエラーになったネットを調べたところファンアウトの多さが問題のようです。ファンアウトが多いことが問題であることを確認する方法とその対策を教えてください。`|
-|`Versal をターゲットにしてデザインしています。PDIがブートしません。問題解決のステップを教えてください。`|
-|`setup違反を起こしているネットの数を効果的に減らすphys_opt_design のオプションを教えてください。また、WNSの焦点を当て改善するオプションを教えてください。`|
-|`XDCの文法で、set_max_delay -datapath_onlyのは何を制約しますか？またコマンド全体の文法を教えてください。-datapath_only を付けるべきでないケースを教えてください。`|
-|`real time video pipe line を構成するために最適なデバイスはどれですか？XGA 解像度10fpsで、ホワイトバランス、色調補正、圧縮を行う場合に必要な最小デバイスはどれですか？4K 60fps, 12 bit 深度の場合はどのデバイスですか？`|
 
 AMD Vivado MCPの設定に関して簡単に説明します。VSCodeに関しては説明を省きます。
 
 1. VSCode を準備する。Linux版、Windows版、どちらでも使えます。vivado を呼び出すことができれば Android 版も使えるはずです。
-2. LLM の設定を行う。今回は、GitHub copilot+を使います。copilot+ではいくつかのLLMから選ぶことができ、今回は、claude 5.5を使います。パラメタ数が少ないLLMの場合、CoT (Chain of Thought)の構築に失敗することがあります。無料で使える claude haiku 3.5でもいくつかの課題は解決できます。haiku 3.5を使った場合、haikuは、時として失敗をし続けます。「完璧です。」とhaiku 3.5が自己評価してもユーザは、haikuの提案、実行結果を注意深く確かめる必要があります。
-3. Vivado MLのインストール。AMDのサイトからダウンロードしてインストールします。今回のデモは、無料ライセンスの範囲内で行います。
-4. AMD Vivado MCPサーバーのダウンロード。[AMD Ross™ Agentic AI Assistant Downloads](https://www.amd.com/en/support/downloads/ross-agentic-ai.html)　から [vivado-ai-extension-2026.9.1.vsix](https://account.amd.com/en/forms/downloads/ross-xef.html?filename=vivado-ai-extension-2026.9.1.vsix)と[vivado-mcp-server-windows-amd64-2026.9.1.exe](https://account.amd.com/en/forms/downloads/ross-mcp-xef.html?filename=vivado-mcp-server-windows-amd64-2026.9.1.exe)または[vivado-mcp-server-linux-amd64-2026.9.1](https://account.amd.com/en/forms/downloads/ross-mcp-xef.html?filename=vivado-mcp-server-linux-amd64-2026.9.1)をダウンロードします。今回は、クラウドのLLM モデルを利用するので、embedding model は不要です。
+2. LLM agentの設定を行う。今回は、GitHub copilot pro+を使います。copilot pro+ではいくつかのLLMから選ぶことができ、今回は、claude 5.5を使います。パラメタ数が少ないLLMの場合、CoT (Chain of Thought)の構築に失敗することがあります。無料で使える claude haiku 3.5でもいくつかの課題は解決できます。haiku 3.5を使った場合、haikuは、時として失敗をし続けます。「完璧です。」とhaiku 3.5が自己評価してもユーザは、haikuの提案、実行結果を注意深く確かめる必要があります。
+3. Vivado MLのインストール。AMDのサイトからダウンロードしてインストールします。今回のデモは、無料のvivadoのライセンスの範囲内で行います。
+4. AMD Vivado MCPサーバーのダウンロード。[AMD Ross™ Agentic AI Assistant Downloads](https://www.amd.com/en/support/downloads/ross-agentic-ai.html)から [vivado-ai-extension-2026.9.1.vsix](https://account.amd.com/en/forms/downloads/ross-xef.html?filename=vivado-ai-extension-2026.9.1.vsix)と[vivado-mcp-server-windows-amd64-2026.9.1.exe](https://account.amd.com/en/forms/downloads/ross-mcp-xef.html?filename=vivado-mcp-server-windows-amd64-2026.9.1.exe)または[vivado-mcp-server-linux-amd64-2026.9.1](https://account.amd.com/en/forms/downloads/ross-mcp-xef.html?filename=vivado-mcp-server-linux-amd64-2026.9.1)をダウンロードします。今回は、クラウドのLLM モデルを利用するので、embedding model は不要です。
 5. vsix を VSCode に組み込みます。command pallet から vsix のインストールを選んでインストールします。
 6. MCP のインストーラを実行してインストールします。
-7. python のインストール。python 3 をインストールしました。
+7. python のインストール。python 3をインストールしました。
 
 ここまででインストールは終了
 
-1. VSCode でgithubにログインして、copilot+のライセンスが使えることを確認します。 作業用のフォルダをopen folder で開いておきましょう。開いてtrustすることで vsix、MCPサーバが起動します。
+1. VSCodeでgithubにログインして、copilot pro+のライセンスが使えることを確認します。 作業用のフォルダをopen folderで開いておきましょう。開いてtrustすることで vsix、MCPサーバが起動します。
 2. command palletでvivado のパスを設定します。実行ファイルのパスを指定します。フォルダーではありません。
 3. command pallet から MCP: List server を行い、amd-doc-search、vivado-mcp-server が見えることを確認します。この時点では何も実行していないので、状態は stoped になっています。
-4. chatのペインのプロンプト入力の辺りで、model をclaude Sonnet 5.5、default permission を Allow Allにしておく。実デザインの時には、Allow Allを使わないのが望ましいと思います。漢字を含む日本語でプロンプトを記述する場合、Alibaba Qwen はトークン消費数が少ない傾向が期待されています。
+4. chatのペインのプロンプト入力の辺りで、modelをclaude Sonnet 5.5、default permissionをAllow Allにしておく。実デザインの時には、Allow Allを使わないのが望ましいと思います。Allow Allにしておくと勝手にどんどんpython package等のツールをインストールします。漢字を含む日本語でプロンプトを記述する場合、Alibaba Qwen/千問 はトークン消費数が少ない傾向が期待されています。
 5. 以下を試してみる。実行できればインストールと設定は終わりです。
 
-| Lab1 install test                       |
-| --------------------------------------- |
-| `こんにちは。今日は何曜日ですか？`      |
-| `vivadoをGUIモードで起動してください。` |
+| Lab1 install test |
+| ----- |
+| こんにちは。今日は何曜日ですか？   |
+| vivadoをGUIモードで起動してください。|
 
+Rossの構造は、3層からなっていると推定しています。
+1. 利用者の質問の用語を変更・補繕して英文化する部分。
+2. 質問内容に関連したAMDのドキュメントを探す部分。AMDの説明によれば、キーになる単語を含む文章の探索と、関係しそうな文章の探索が行われます。
+3. 2.で抽出された文章の前提、文章をヒントとして、問題解決の手順を設計、実行する部分。
 
-## Lab2　テキストで記述した仕様から合成可能なブロックダイアグラムを作成する。
+Lab1はもっぱら2.の部分を使いました。vivado.amd.com/chatは、2.を使っています。答えとともに、参照すべきドキュメントが表示されます。
+
+|ツール|内容|
+| ---- | ---- |
+| VSCode | 無料のツール。一般にはソースコードエディタと分類されている。ここでは chat機能を使いAI agentとの会話するために使う。|
+| GITHub Copilot | LLM agentへのアクセスを可能にする。今回は、有料のGITHub copilot pro+ライセンスを使う。Microsoft 365 Copilotとは別物|
+| Claude Sonet 5.5 | 有料のLLM。GIT Hub Copilot経由で課金される。VSCodeのchatから使う。|
+| Vivado 2025.2 | AMDのFPGAデザインツール。デザイン対象のデバイスによってライセンスが異なる。今回は無料ライセンスで扱うことができるデバイスのみを使う。|
+| ...vsix | AMD製の無料のVSCode機能拡張。VSCodeのchatの機能を補助？し一連の作業を可能にする。Linux/Windowsどちらでも同じものが使える。|
+|vivado-mcp-server-...|AMD製の無料MCPサーバー。vivadoの版数、LLM agentに関わりなく、Linux/Windowsで使えるMCPサーバ。|
+
+## Lab2　仕様書からブロックダイアグラムの書起し / テキストで記述した仕様から合成可能なブロックダイアグラムを作成する。
 
 MD(markdown)形式で記述した仕様からvivadoのIPI (IP integrator)を使いBlock Design(vivado形式のブロックダイアグラム)を作成します。
 
@@ -72,7 +78,7 @@ MD(markdown)形式で記述した仕様からvivadoのIPI (IP integrator)を使�
 
 マークダウン形式でレポートを作成する時にpythonが必要になります。python2/3 どちらでも問題無いようですが、レポート内で英語以外を使う場合には、python3の方が良さそうです。python が無いと"python が見つからなかったので代わりに次のファイルを作成した''になります。
 
-## Lab3　RTLのリント
+## Lab3　今回スキップ / RTLのリント
 
 　RTLのリントを行い問題点を修正します。文法に沿っていて合成可能なRTLであっても、書き間違え、ウッカリミスを含むことがあります。Vivadoのリントは、実装した時に効果が無い、冗長な記述を中心的にRTLの解析を行います。
 
@@ -80,34 +86,37 @@ MD(markdown)形式で記述した仕様からvivadoのIPI (IP integrator)を使�
 
 　ここでは、他から参照されない信号の検査、修正の波及範囲の検査を機械知性を使って行います。
 
-|      | 修正指示内容                                                 |
-| ---- | ------------------------------------------------------------ |
+|      | 修正指示内容 |
+| ---- | ---- |
 |      | 不完全なcaseにはdefaultを追加してください。|
 |      | 116行のシフト量を0にしてください。|
 
 以上のように機械知性に任せきりの方法は正しい解決になるとは限らないことがわかります。経験豊かなエンジニアの判断力は依然として価値があります。このラボでは踏み込ませんが、debug_status 以外の未参照レジスタに対しても分析はまだ必要です。結果的に同じ対処方法であっても、なぜそうしたのか？なぜそれ以外の方法ではなかったのか？露見しなかった問題が無いか調べる部分には価値があります。
 
 
-## Lab4　AXIバスのデバッグ
+## Lab4　AXIマスタの検証とAIによる修正 / AXIバスのデバッグ
 
 AXI マスタのデバッグを行います。マスタの記述は６個あり、そのうち５個には意図的に簡単なバグが仕込まれています。人手で作成したテストベンチでマスタを駆動してAXIトラフィックがプロトコルに準拠しているか検査します。AXIプロトコルの検査自体はvivadoに付随している検証用IPを使って検査します。
 
 マスタの問題箇所を修正し、問題が解決したか確認します。
 確認後、問題をテーブルの形でまとめてレポートします。
 
-Ross Agenticの仕組みが明らかになります。Ross Agenticは回路全体を理解したり、通信プロトコルを完全に理解しているのではなく、AMDのドキュメントに従って解析手順を組み立て、利用できるコンポーネントを使って問題解決を行います。そのために結果品質の再現性は高く、間違いという意味でのハルシネーションに加え、背景コンテキストの取り違えという意味でのハルシネーションを少なくできます。
+このラボでRoss Agenticの仕組みが明らかになります。Ross Agenticは回路全体を理解したり、通信プロトコルを完全に理解しているのではなく、AMDのドキュメントに従って解析手順を組み立て、利用できるコンポーネントを使って問題解決を行います。そのために結果品質の再現性は高く、間違いという意味でのハルシネーションに加え、背景コンテキストの取り違えという意味でのハルシネーションを少なくできます。
 「図示する」と指示すると、vivadoのGUIを使うこともありますが、PNG、PDFのファイルを作成することもあります。また「案Aは使えますか？」と尋ねると、案Aを実行して使えることを確認することもあります。実行の必要が無い場合は、「案Aは使えると推測できますか？」と尋ねる方法もあります。
 
 ユーザ独自のプロトコル、独自のAXI拡張も２つの方法で対応できます。
 1. 専用の検証IPを準備して、そのIPを使うことを指示する。
 2. 独自のMCPサーバを作成する。ちなみに、VSCodeのchatを受け取っているLLM/chatが、chatの中のagentで、そのagentがMCPサーバを呼び出します。MCPサーバには、そのサーバがどのような機能を持ち、agentから見てどのようにその機能を使うが自然言語で記述されています。
 
-## Lab5　タイミング検証 1
+agentの機能の差は、MCPを呼び出しかた、問題解決の計画の巧みさとして現れます。計画作成を行うMCPサーバを利用する方法も理論的にはありますが、今回はそうなっていません。
+AMD製のMCPサーバには、幾つかのVivadoを使う方法の定義の他にskillと呼ばれる特定の問題を解決するpythonのスクリプト群とその使い方の定義が含まれています。
+
+## Lab5　一般的なデザイン手法を使ったデザイン更新 / タイミング検証 1
 
 デザインのタイミング検証を行います。バイオレーションの主原因を探り、RTLを修正して改善します。Lab5の問題は、デザインの一般的な実践方法に基づくものです。... つまり検査対象のデザインはデザインの定石を守っていない、vivado knowledge の常識力の検査を行います。
 
 本ラボの中では、クロック構造の変更は行いません。FPGA、Vivado固有の話題ではないのでPLL を入れるまたは、ソースシンクロナス構造への変更は行いません。PLLの挿入は、Lab2で行っています。Lab2で行っていないのは、見た目のクロック遅延を０に近づけるためにループバックを工夫する点があります。もし逓倍・分周する場合には、もう少し手間がいりますが、AMD のMMCMはその辺りが初めからデザインされていてドキュメントもそろっているので、正しくできます。 
 
-## Lab6　タイミング検証 2
+## Lab6　AMDデバイスの特徴を生かすデザイン更新 / タイミング検証 2
 
 デザインのタイミング検証を行います。バイオレーションの主原因を探り、RTLを修正して改善します。Lab6では、FPGA特有の問題をAMDデバイスの機能で解決します。ASICで慣れたユーザ、ASICで利用したデザインをFPGAで実装する場合の問題の解決能力を検査します。
